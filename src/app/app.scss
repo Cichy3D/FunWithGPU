@@ -1,0 +1,15 @@
+
+:host ::ng-deep {
+  .p-menubar {
+    margin: 0 auto;
+    position: relative; // Kluczowe dla pozycjonowania dzieci
+  }
+  .p-menubar-mobile .p-menubar-root-list {
+    width: max-content;
+  }
+}
+
+.content {
+  height: 100vh;
+  overflow: hidden;
+}
