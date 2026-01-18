@@ -322,15 +322,7 @@ export class ColorWar2 implements OnInit, OnDestroy {
     @fragment
     fn fs_main(@builtin(position) pos: vec4f) -> FragmentOutput {
 
-      var coordsOffset = vec2i(-1); // przesuwam koordynaty
-      if ( textureLoad(feedbackTexture, coordsOffset, 0).a == 0) {coordsOffset += vec2i(1,0);}
-      if ( textureLoad(feedbackTexture, coordsOffset, 0).a == 0) {coordsOffset += vec2i(0,1);}
-      if ( textureLoad(feedbackTexture, coordsOffset, 0).a == 0) {coordsOffset += vec2i(1,0);}
-      if ( textureLoad(feedbackTexture, coordsOffset, 0).a == 0) {coordsOffset += vec2i(0,1);}
-      if ( textureLoad(feedbackTexture, coordsOffset, 0).a == 0) {coordsOffset += vec2i(1,0);}
-      if ( textureLoad(feedbackTexture, coordsOffset, 0).a == 0) {coordsOffset += vec2i(0,1);}
-
-      let initCoords = vec2i(pos.xy) + coordsOffset;
+      let initCoords = vec2i(pos.xy);
       var coords = vec2i(pos.xy);
       let frame = u32(inputs.frame);
       var seed = u32(textureLoad(seedTexture, coords, 0).r);

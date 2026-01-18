@@ -6,6 +6,8 @@
   }
   .p-menubar-mobile .p-menubar-root-list {
     width: max-content;
+    overflow: auto;
+    max-height: calc(100vh - 70px);
   }
 }
 
